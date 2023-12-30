@@ -1,0 +1,30 @@
+{
+  "name": "vite-plugin-monaco-editor-nls",
+  "version": "1.0.0",
+  "keyword": "rollup-plugin vite-plugin",
+  "license": "MIT",
+  "repository": "https://github.com/pearone/vite-plugin-monaco-editor-nls",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "peerDependencies": {
+    "vite": ">=2.3.0"
+  },
+  "scripts": {
+    "create-locale": "node ./src/script/script.js",
+    "build": "npm run clean && tsc -p . && npm run copy-locale",
+    "clean": "rimraf dist",
+    "copy-locale": "xcopy /E /I /Y src\\locale dist\\locale\\",
+    "pub": "npm publish"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.0",
+    "copy": "^0.3.2",
+    "esbuild": "^0.19.10",
+    "magic-string": "^0.30.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.2.2",
+    "vite": "^3.0.4"
+  }
+}
